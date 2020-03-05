@@ -11,6 +11,7 @@
         </filter>
     </appender>
 
+    <!-- 项目日志，可通过日期自动rollinng 最长10天 encoder 日志格式-->
     <appender name="mmall" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <!--<File>d:/mmalllog/mmall.log</File>-->
         <File>/developer/apache-tomcat-7.0.73/logs/mmall.log</File>
@@ -44,6 +45,7 @@
         </filter>
     </appender>
 
+    <!--依赖两个appender  additivity=false 是此日志不向上继承-->
     <logger name="com.mmall" additivity="false" level="INFO" >
         <appender-ref ref="mmall" />
         <appender-ref ref="console"/>
